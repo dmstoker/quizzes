@@ -9,15 +9,34 @@ $bg : #111; // background color
 
 $c : cyan yellow tomato;
 
-body {
+h1 {
 	font: 10vw/1 Permanent Marker;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
 	text-align: center;
-	background: $bg;
 	color: snow;
+}
+
+h2 {
+	font: 10vw/1 Permanent Marker;
+	text-align: center;
+	color: snow;
+}
+
+h4 {
+	color: black
+}
+body {
+	background: $bg;
+}
+
+.button {
+  background-color: snow;
+  border-radius: 28px;
+  color: $bg;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 span {

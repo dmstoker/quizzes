@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'quizzes#index'
+  root 'ratings#index'
+  resources :ratings
+
 end

@@ -1,0 +1,47 @@
+</br></br></br></br></br>
+<h1>
+ <span>D</span><span>Y</span><span>L</span><span>A</span><span>N</span><span>'</span><span>S</span>
+  &nbsp<span>Q</span><span>U</span><span>I</span><span>Z</span>
+</h1>
+
+  <h1>
+  </br>
+  <button type="button" class="button" data-toggle="modal" data-target="#myModal">
+    <%= link_to 'Rate this Quiz', '#', data: {toggle: 'modal', target: '#myModal'} %>
+  </button>
+
+   <% if @rating.present? %>
+  </br></br>
+  <span> Rated <%= @rating.rating %> </span>
+  </br></br>
+  <span>  by: <%= @rating.name%> </span>
+  <% end %>
+
+  </h1>
+
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">×</span>
+           </button>
+           <h4 class="modal-title" id="myModalLabel">Rate this Quiz</h4>
+         </div>
+         <%= simple_form_for Rating.new do |f| %>
+           <div class="modal-body">
+            <h4> <%= f.input :name %> </h4>
+            <h4> <%= f.input :rating, as: :select, collection: Rating::RATINGS %> </h4>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="button" data-dismiss="modal">Close</button>
+             <%= f.submit 'Rate Quiz', class: 'button' %>
+           </div>
+         <% end %>
+         </div>
+
+       </div>
+     </div>
